@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+:root {
+  --headerHeight: 60px;
+  --paragraphMargin: 15px;
+  /* --primary: rgb(188,155,113);
+  --secondary: rgb(249,242,232);
+  --tertiary: rgb(162,183,211); */
+  --primary: rgb(188, 155, 113);
+  --secondary: rgb(249, 242, 232);
+  --tertiary: rgb(162, 183, 211);
+  --tertiaryTrans: rgb(162, 183, 211, 0.95);
+  --bodyFont: "Hind", sans-serif;
+}
+html,
+body {
+  font-family: "Montserrat", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+}
+@keyframes sidebarSwipeLeft {
+  from {
+    margin-left: 0;
+    box-shadow: 0 0 2px 1px black;
+
+  }
+  to {
+    margin-left: -25vw;
+    box-shadow: 0 0 0 0 black;
+  }
+}
+@keyframes sidebarSwipeRight {
+  from {
+    margin-left: -25vw;
+    box-shadow: 0 0 0 0 black;
+
+  }
+  to {
+    margin-left: 0;
+    box-shadow: 0 0 2px 1px black;
+
+  }
+}
+@keyframes portSwipeLeft {
+  from {
+    width: 75vw;
+  }
+  to {
+    width: 100vw;
+  }
+}
+@keyframes portSwipeRight {
+  from {
+    width: 100vw;
+  }
+  to {
+    width: 75vw;
+  }
+}
+@keyframes headSwipeLeft {
+  from {
+    box-shadow: 25vw 1px 1px black;
+  }
+  to {
+    box-shadow: 0vw 1px 1px black;
+  }
+}
+@keyframes headSwipeRight {
+  from {
+    box-shadow: 0vw 1px 1px black;
+
+  }
+  to {
+    box-shadow: 25vw 1px 1px black;
+  }
+}
+.header {
+  position: relative;
+
+  box-sizing: border-box;
+  box-shadow: 25vw 1px 1px black;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid black;
+  /* background: rgb(255, 138, 102); */
+  background: var(--primary);
+  color: black;
+
+  overflow: auto;
+  z-index: 2;
+}
+.header.fullscreen {
+  box-shadow: 0px 1px 1px black;
+}
+.nameHeader {
+  display: flex;
+  flex-direction: column;
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+  width: 25vw;
+  font-size: 40px;
+  /* height:1em; */
+  text-align: center;
+  overflow: visible;
+  font-weight: bold;
+  /* font-variant: small-caps; */
+}
+.basicNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  width: auto;
+  height: 1em;
+  overflow: visible;
+}
+.link {
+  box-sizing: border-box;
+  color: black;
+  padding: 10px;
+  font-style: normal;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.belowHead {
+  position: fixed;
+  top: calc(var(--headerHeight) + 1px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: calc(100% - var(--headerHeight));
+  width: 100%;
+  z-index: 0;
+}
+.portSidebar {
+  z-index: 10;
+  box-shadow: 0 0 2px 1px black;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* flex-shrink: initial; */
+  align-items: center;
+  width: 25vw;
+  border-right: 1px solid black;
+  /* background: rgb(255, 206, 186); */
+  background: var(--secondary);
+  height: 100%;
+  min-width:200px;
+  padding:15px;
+  overflow-y: scroll;
+}
+
+.projectName {
+  font-family: var(--bodyFont), "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  margin-top: 25px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.portContent {
+  box-sizing: border-box;
+
+  width: 75vw;
+
+  scroll-snap-type: y mandatory;
+  /* scroll-snap-points-y: repeat(800px); */
+  overflow-y: scroll;
+  z-index: 3;
+}
+
+.sbButton {
+  align-self: flex-start;
+  position: absolute;
+  top: 20px;
+  left: 26.8vw;
+  width: 40px;
+  height: 20px;
+  font-weight: bold;
+  text-align: center;
+  background: var(--secondary);
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  outline: none;
+  box-shadow: 1px 1px 1px black;
+
+  z-index: 10;
+}
+.sbButton:hover {
+  background: var(--primary);
+  cursor: pointer;
+}
+p {
+  margin-top: var(--paragraphMargin);
+  margin-bottom: var(--paragraphMargin);
+}
+
+.description {
+  font-family: var(--bodyFont), "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  margin-top: 25px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.2em;
+}
+.portContentHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: calc(50% - 6%);
+
+  align-items: center;
+  font-family: var(--bodyFont), "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  font-size: 40px;
+  height: 12%;
+  text-align: center;
+  background: var(--tertiaryTrans);
+  color: black;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+
+  width: 100%;
+  /* box-shadow: 2px 2px 1px black; */
+  z-index: 1;
+  /* display: none; */
+}
+.portContentBody {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  height: 10%;
+  background: var(--tertiary);
+  color: black;
+  text-align: center;
+  border-bottom: 2px solid black;
+  display: none;
+}
+
+.pc {
+  scroll-snap-align: start;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+  width: 100%;
+}
+.imageDiv {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  perspective: 2px;
+  border-bottom: 2px solid black;
+  background-repeat: no-repeat;
+}
+.imageDiv1 {
+  background-image: url("../images/carson.jpg");
+  background-position-x: center;
+  background-position-y: top;
+  background-size: cover;
+
+  z-index: 0;
+}
+.imageDiv1.portContentHead {
+  margin-top: calc(12%);
+}
+.imageDiv2 {
+  background-image: url("../images/project2image.png");
+  background-position-x: center;
+  background-position-y: top;
+  background-size: cover;
+}
+.imageDiv3 {
+  background-image: url("../images/project3image.png");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+}
+.imageDiv4 {
+  background-image: url("../images/project4image.png");
+  background-size: cover;
+  background-position-y: top;
+}
+.imageDiv5 {
+  background-image: url("../images/project5image.png");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+}
