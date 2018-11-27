@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $(".portSidebar").attr(`style`,`padding: ${document.getElementById('pSB').offsetWidth-document.getElementById('pSB').clientWidth}`);
+  console.log(document.getElementById('pSB').offsetWidth);
   var timeOut;
   let numProj = 5;
   let sideBars = {
@@ -19,10 +21,11 @@ $(document).ready(function() {
   };
   $(".sbButton").on("click", event => {
     if ($(".portSidebar").attr("value") == "true") {
+
       $(".portSidebar").attr("value", "false");
+      $(".portSidebar").attr(`style`,`padding: ${document.getElementById('pSB').offsetWidth-document.getElementById('pSB').clientWidth}`);
 
 
-      
       $(".portSidebar").attr("style", "animation:sidebarSwipeLeft .3s;animation-fill-mode: forwards;");
 
       $(".portContent").attr("style", "animation:portSwipeLeft .3s;animation-fill-mode:forwards;");
@@ -32,9 +35,12 @@ $(document).ready(function() {
 
       $(".sbButton").html(">>");
       $(".sbButton").attr("style", "left: 20px;");
+
       // $(".header").addClass("fullscreen");
     } else {
       $(".portSidebar").attr("value", "true");
+      $(".portSidebar").attr(`style`,`padding: ${document.getElementById('pSB').offsetWidth-document.getElementById('pSB').clientWidth}`);
+
       $(".portSidebar").attr("style", "animation:sidebarSwipeRight .3s;animation-fill-mode: forwards;");
 
       $(".portContent").attr("style", "animation:portSwipeRight .3s;animation-fill-mode:forwards;");
@@ -45,6 +51,7 @@ $(document).ready(function() {
 
       $(".sbButton").html("<<");
       $(".sbButton").attr("style", "left: 27vw;");
+
             // $(".header").addClass("fullscreen");
 
     }
