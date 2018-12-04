@@ -74,7 +74,6 @@ $(document).ready(function() {
       $(".sbButton").html("<<");
       $(".sbButton").attr("style", "left: 27vw;");
 
-      // $(".header").addClass("fullscreen");
     }
   });
   $.fn.isInViewport = function() {
@@ -122,56 +121,6 @@ $(document).ready(function() {
   function showAnimation(anim, duration,whichClass){
     $(`.${whichClass}`).attr(`style`, `animation: ${anim} ${duration}s;animation-fill-mode:forwards;`);
   }
-
-  // $(".belowHead.about").on("scroll", () => {
-
-  //   clearTimeout(timeOut);
-
-  //   console.log(howmuchScroll);
-  //   howmuchScroll++;
-  //   aboutScrollAnimation(howmuchScroll);
-
-  //   timeOut = setTimeout(() => {
-  //     howmuchScroll = 0;
-  //     $(".belowHead.about").scrollTop(0);
-  //   }, 250);
-  // });
-
-  // function aboutScrollAnimation(howmuchScroll){
-  //   if (howmuchScroll > 40) {
-  //     $(".belowHead.about").scrollTop(100);
-
-  //     $('.bioDiv.bioDiv2').remove();
-
-  //     $(".canChangeW").attr(
-  //       "style",
-  //       "animation:welcomeSwipe 1s;animation-fill-mode:forwards;"
-  //     );
-  //     $(".canChangeBot").attr(
-  //       "style",
-  //       "animation:hideBottom 1s;animation-fill-mode:forwards;"
-  //     );
-  //     $(".canChangeB").attr(
-  //       "style",
-  //       "animation:bioSwipe 1s;animation-fill-mode: forwards;"
-  //     );
-
-      
-  //     timeOut=setTimeout(()=>{
-        // $(".canChangeW").attr(
-        //   "style",
-        //   "animation:welcomePic 1s;animation-fill-mode:forwards;"
-        // );
-  //       $(".welcomeAbout").removeClass('canChangeW');
-  //       $(".bioDiv.bioDiv2").removeClass('canChangeBot');
-
-  //       $(".bioDiv").removeClass('canChangeB');
-
-  //       clearTimeout(timeOut);
-  //     },904);
-  //   }
-  // }
-
   $('.bioDiv').mouseenter((event)=>{
     showAnimation('welcomeSwipe', '1', 'canChangeW');
     $('.bioDiv').attr('style','overflow-y:scroll;');

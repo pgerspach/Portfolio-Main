@@ -10,8 +10,8 @@
   --primary-Trans: RGBA(201, 168, 126, 0.2);
   --primary-Trans2: RGBA(201, 168, 126, 0.4);
 
-  --secondary: rgb(249, 242, 232);
-  --secondary-Trans: RGBA(249, 242, 232, 0.5);
+  --secondary: rgb(231, 231, 231);
+  --secondary-Trans: RGBA(249, 250, 246, 0.5);
 
   --tertiary: rgb(162, 183, 211);
   --tertiary-Trans: RGBA(162, 183, 211, 0.7);
@@ -91,7 +91,8 @@ body {
   align-items: center;
   padding: 10px;
   width: 100%;
-  height: auto;
+  min-height: 60px;
+  overflow:visible;
   border-bottom: 1px solid black;
   /* background: rgb(255, 138, 102); */
   background: var(--primary);
@@ -214,6 +215,8 @@ a:hover {
 
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  overflow-x:hidden;
+
   z-index: 3;
 }
 
@@ -272,7 +275,7 @@ a:hover {
   /* border-bottom: 2px solid black; */
   /* border-top: 2px solid black; */
   font-family: "Marck Script", cursive;
-
+  
   width: 60%;
   z-index: 1;
 }
@@ -313,6 +316,10 @@ a:hover {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  overflow-x:hidden;
+  overflow-y:hidden;
+
+
   flex-shrink: 0;
   height: 100%;
   width: 100%;
@@ -325,6 +332,7 @@ a:hover {
   perspective: 2px;
   border-bottom: 2px solid black;
   background-repeat: no-repeat;
+  overflow-x:hidden;
   z-index: 3;
 }
 .imageDiv1 {
@@ -381,7 +389,7 @@ a:hover {
   flex-direction: column;
   flex-grow: 1;
   height:calc(100vh - 60px);
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y proximity; */
 
   overflow-y: scroll;
 }
@@ -428,12 +436,20 @@ a:hover {
   /* flex-grow: 1; */
   flex-shrink : 0;
   flex-grow : 1;
+  position: relative;
 
-  height: calc(100vh - 60px);
+
+  min-height: calc(100vh - 58px);
   width: 100vw;
-  overflow: scroll;
-  scroll-snap-align: start;
+  overflow: visible;
+  /* scroll-snap-align: start; */
+
 }
+.page2{
+  display:flex;
+  position: relative;;
+}
+
 .bioDiv {
   position: relative;
 
@@ -453,16 +469,33 @@ a:hover {
   font-size: 18px;
   color: black;
 }
-.upperPage2 {
-  display: flex;
-  flex-direction: row;
-  height: calc(60vh - 60px);
-  width: 50vw;
+.page2topRow{
+  position: relative;
+  display:flex;
+  width:100%;
+  height:calc(60vh - 60px);
+  background:var(--primary);
 }
 .myPic {
+  box-sizing: border-box;
   display: flex;
-  height: calc(60vh - 60px);
-  width: 50vw;
+  height: 100%;
+  width: 30%;
+  background-image: url("../images/me.jpg");
+  background-size: cover;
+  background-position-y: top;
+  border-bottom:2px solid #EE7752;
+  /* border-top:3px solid #23D5AB; */
+  border-right:2px solid #23A6D5;
+  border-left:2px solid #E73C7E;
+}
+.logos{
+  box-sizing: border-box;
+  display:flex;
+  
+  width:70%;
+  height:100%;
+
 }
 .lowerPage2 {
   display: flex;
@@ -479,44 +512,8 @@ a:hover {
   }
 }
 
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 0%
-  }
-  50% {
-    background-position: 100% 0%
-  }
-  100% {
-    background-position: 0% 0%
-  }
-}
 
 .header.about::after {
-  /* background: linear-gradient(to right, red 16.6%, orange 33.2%, yellow 50%, green 66.6%, blue 83.2%, purple 100%); */
   position: absolute;
   content: "";
   width: 100%;
@@ -526,15 +523,161 @@ a:hover {
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-position: 0% 0%;
 
-  -webkit-animation: Gradient 5s ease;
-  -moz-animation: Gradient 5s ease;
-  animation: Gradient 15s ease;
+  -webkit-animation: movingG 5s ease infinite;
+  -moz-animation: movingG2 5s ease infinite;
+  animation: movingG3 15s ease infinite; 
+}
+.page2topRow::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: 0;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+
+}
+.page2topRow::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(-45deg,#23D5AB,#23A6D5,#E73C7E,#EE7752);
+  background-position: 0% 0%;
+
+}
+.aboutFooter{
+  display:flex;
+  position: relative;
+  flex-shrink:0;
+  flex-grow:1;
+  height:60px;
+  width:100%;
+  margin-top:20px;
+  background:var(--primary);
+  align-items:center;
+  justify-content: center;
+}
+.aboutFooter::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: 0;
+  background: linear-gradient(-45deg,#23D5AB,#23A6D5,#E73C7E,#EE7752);
+  background-position: 0% 0%;
+
+}
+.ghubLogo,
+.linkedInLogo{
+  margin-left:10px;
+  margin-right:10px;
+}
+.aboutFooterContact{
+  display:flex;
+  position: fixed;
+  flex-shrink:0;
+  flex-grow:1;
+  height:60px;
+  width:100%;
+  bottom:0px;
+  background:var(--primary);
+  align-items:center;
+  justify-content: center;
+}
+.aboutFooterContact::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: 0;
+  background: linear-gradient(-45deg,#23D5AB,#23A6D5,#E73C7E,#EE7752);
+  background-position: 0% 0%;
+
+}
+.contactForm{
+  display:flex;
+  flex-direction: column;
+  align-self: center;
+  width:45%;
+  font-size: 30px;
+  padding-top:30px;
+  padding-bottom:30px;
+
+}
+.inputRow{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-top:10px;
+  padding-bottom:10px;
+
+
+}
+.form-inp{
+  display:flex;
+  align-self:flex-start;
+  font-size:20px;
+  height:30px;
+  width:400px;
+  border-radius:20px;
+  border:1px solid var(--primary);
+  padding-left:10px;
+  padding-top:5px;
+  padding-bottom:5px;
+
+
+}
+.form-message{
+  height:300px;
+  width:400px;
+}
+.contactSubmit{
+  width:100%;
+  border-radius: 10px;
+}
+input:focus,
+textarea:focus{
+  outline-width: 0;
+
 }
 
-.bottomSection {
-  display: flex;
-  flex-direction: column;
-  overflow: visible;
-  width: 100%;
-  background-image: url(../images/code.png);
+@-webkit-keyframes movingG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes movingG2 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes movingG3 {
+  0% {
+    background-position: 0% 0%
+  }
+  50% {
+    background-position: 100% 0%
+  }
+  100% {
+    background-position: 0% 0%
+  }
 }
