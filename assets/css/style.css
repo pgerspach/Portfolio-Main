@@ -91,7 +91,7 @@ body {
   align-items: center;
   padding: 10px;
   width: 100%;
-  min-height: 60px;
+  min-height: 65px;
   overflow:visible;
   border-bottom: 1px solid black;
   /* background: rgb(255, 138, 102); */
@@ -639,6 +639,7 @@ a:hover {
 .contactSubmit{
   width:100%;
   border-radius: 10px;
+  height:40px;
 }
 input:focus,
 textarea:focus{
@@ -680,4 +681,51 @@ textarea:focus{
   100% {
     background-position: 0% 0%
   }
+}
+@media (max-width:594px){
+  
+  .portSidebar{
+    display:none;
+  }
+  .portContent::after{
+    display:none;
+
+  }
+  .portContent{
+    width: 100vw;
+    position: absolute;
+    height: 50vh;
+    top:20px;
+    /* top:40px; */
+  }
+
+
+  .portContentHead{
+    font-size:35px;
+    overflow:visible;
+  }
+  .imageDiv{
+    overflow: visible;
+  }
+  .nameHeader{
+    font-size:30px;
+  }
+  .basicNavbar{
+    font-size:20px;
+  }
+  .sbButton{
+    display:none;
+  }
+  .imageDiv::after{
+    display: none;
+  }
+  .portSidebar{
+    width:100%;
+    height:calc(40vh);
+    top:calc(56vh - 20px);
+    overflow:scroll;
+    display:flex;
+
+  }
+
 }
