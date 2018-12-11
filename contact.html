@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -30,13 +31,13 @@
 
     <section class="belowHead contact">
       <div class="topSection page">
-        <form class = "contactForm">
+        <form class = "contactForm"action="mailto:pgerspac@alumni.nd.edu" method="post" enctype="text/plain">
             <div class = 'inputRow'>
                     Name : <input class = "form-name form-inp">
 
             </div>
             <div class = 'inputRow'>
-                    Email : <input type = "email" class = "form-inp form-email">
+                    Email : <input type = "email" name="mail"class = "form-inp form-email">
 
             </div>
             <div class = 'inputRow'>
@@ -44,7 +45,7 @@
 
             </div>
             <div class = 'inputRow'>
-                    <input type = 'submit' class = "contactSubmit"></textarea>
+                    <input type = 'submit' class = "contactSubmit"value="Send"></textarea>
 
             </div>
 

@@ -186,7 +186,7 @@ a:hover {
   top: 0;
 }
 .imageDiv::after {
-  background: linear-gradient(0deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background: linear-gradient(to top, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 
   position: absolute;
   content: "";
@@ -381,7 +381,7 @@ a:hover {
   z-index: 3;
 }
 .imageDiv7 {
-  background-image: url("../images/liri1.png");
+  background-image: url("../images/liri.gif");
   background-size: cover;
   background-position-x: center;
   background-position-y: top;
@@ -520,7 +520,7 @@ a:hover {
 }
 
 
-.header.about::after {
+.header::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -703,7 +703,6 @@ textarea:focus{
     position: absolute;
     height: 50vh;
     top:20px;
-    /* top:40px; */
   }
 
 
