@@ -204,10 +204,10 @@ a:hover {
 }
 
 .sbButton {
-  align-self: flex-start;
+  /* align-self: flex-start; */
   position: absolute;
   top: 20px;
-  left: 26.8vw;
+  margin-left:2%;
   width: 40px;
   height: 20px;
   font-weight: bold;
@@ -268,8 +268,10 @@ a:hover {
   margin-right:3%;
 
 }
+
 .tnIcons:hover{
   cursor: pointer;
+  filter: grayscale(100%);
 }
 
 .portContentHead {
@@ -363,6 +365,8 @@ a:hover {
   border-bottom: 2px solid black;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  overflow-y: hidden;
+
   z-index: 3;
 }
 /* .imageDiv1 {

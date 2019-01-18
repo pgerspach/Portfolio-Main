@@ -113,7 +113,7 @@ const sideBars = {
         );
   
         $(".sbButton").html(">>");
-        $(".sbButton").css("left", `20px`);
+        // $(".sbButton").css("left", `20px`);
   
         // $(".header").addClass("fullscreen");
       } else {
@@ -140,7 +140,10 @@ const sideBars = {
   ///////////////////////////////////////////////////////////////////////////////////
   
         $(".sbButton").html("<<");
-        $(".sbButton").css("left", `27vw`);
+        // $(".sbButton").css("left", `0px`);
+        // $(".sbButton").css("margin-left", `2%`);
+
+        
       }
     });
 

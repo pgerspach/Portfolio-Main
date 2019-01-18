@@ -59,9 +59,10 @@ $(document).ready(() => {
   const sidebarColor = transColors[1];
   const sidebarTrans = 0.9;
   const sidebarFontColor = colors[0];
-  const portfolioBackgroundColor = `radial-gradient(${colors[4]}, ${
-    colors[3]
-  },${colors[2]}`;
+  // const portfolioBackgroundColor = `radial-gradient(${colors[4]}, ${
+  //   colors[3]
+  // },${colors[2]}`;
+  const portfolioBackgroundColor = colors[2];
   const portContentHeadColor = colors[0];
   //////////////////////*********************************** */
 

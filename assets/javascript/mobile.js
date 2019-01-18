@@ -54,6 +54,9 @@ $(document).ready(() => {
     isMobile = true;
     // $(".portSidebar").attr("style", "display:none");
     $(".portSidebar").css("display", "none");
+    $(".sbButton").css("display", "none");
+    $(".portIcons").css("display", "none");
+
     $(".portContent").css("width", "100vw");
     let vpWidth = $(this).outerWidth();
     // console.log(vpHeight);
