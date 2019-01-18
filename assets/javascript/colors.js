@@ -1,17 +1,20 @@
 $(document).ready(() => {
-    // let colors = ["0F084B", "888DA7", "F7B2AD", "63D2FF", "78D5D7"]; // LIKE IT
-    // let colors = ["4B4E6D", "A1E887", "857885", "2F97C1", "1CCAD8"]; //OK
-    // let colors = ["523249", "CBD4C2", "C3B299", "815355", "DBEBC0"]; // LIKE A LOT
-    // let colors = ["2D93AD", "88AB75", "DE8F6E", "7D7C84", "DBD56E"];
-    // let colors = ["982649", "DDFFD9", "7C8483", "68C3D4", "A3C9A8"];
-    // let colors = ["5F1A37", "73C2BE", "776885", "73EEDC", "04030F"]; //LIKE!!!
-    // let colors = ["931F1D", "8A9B68", "937B63", "B6C197", "D5DDBC"];
+  // let colors = ["0F084B", "888DA7", "F7B2AD", "63D2FF", "78D5D7"]; // LIKE IT
+  // let colors = ["4B4E6D", "A1E887", "857885", "2F97C1", "1CCAD8"]; //OK
+  // let colors = ["523249", "CBD4C2", "C3B299", "815355", "DBEBC0"]; // LIKE A LOT
+  // let colors = ["2D93AD", "88AB75", "DE8F6E", "7D7C84", "DBD56E"];
+  // let colors = ["982649", "DDFFD9", "7C8483", "68C3D4", "A3C9A8"];
+  // let colors = ["5F1A37", "73C2BE", "776885", "73EEDC", "04030F"]; //LIKE!!!
+  // let colors = ["931F1D", "8A9B68", "937B63", "B6C197", "D5DDBC"];
   // let colors = ["474647", "97CC04", "2D7DD2", "F45D01", "EEB902"];
-  let colors = ["36151E", "8499B1", "A5C4D4", "593F62", "7B6D8D"]; // NOT BAD
-// let colors = ["A77E58", "D9CFC1", "80A1C1", "BA3F1D", "EEE3AB"];
-// let colors = ["351E29", "C8E9A0", "6DD3CE", "F7A278", "A13D63"];
-// let colors = ["36393B", "AFD0D6", "C49799", "A5D8FF", "BFB6BB"];
-
+  // let colors = ["36151E", "8499B1", "A5C4D4", "593F62", "7B6D8D"]; // NOT BAD
+  // let colors = ["A77E58", "D9CFC1", "80A1C1", "BA3F1D", "EEE3AB"];
+  // let colors = ["351E29", "C8E9A0", "6DD3CE", "F7A278", "A13D63"];
+  // let colors = ["36393B", "AFD0D6", "C49799", "A5D8FF", "BFB6BB"];
+  // let colors = ["393D3F", "D5BBB1", "9CC4B2", "E76D83", "C98CA7"];
+  // let colors = ["BB0A21", "ECEBE4", "6F73D2", "DDFFD9", "ECC8AE"];
+  // let colors = ["EC7357", "EEF5DB", "C7EFCF", "FE5F55", "FDD692"];
+  let colors = ["183059", "F6F4F3", "DBB4AD", "B46CCC", "276FBF"];
 
 
   const shuffle = array => {
@@ -33,12 +36,12 @@ $(document).ready(() => {
 
     return array;
   };
-//////////////////////*********************************** */
-//////////////////////*********************************** */
+  //////////////////////*********************************** */
+  //////////////////////*********************************** */
 
-    // colors = shuffle(colors);
+  // colors = shuffle(colors);
 
-//////////////////////*********************************** */
+  //////////////////////*********************************** */
 
   let transColors = colors.map(hexToRgb);
   colors = colors.map(x => {
@@ -50,17 +53,17 @@ $(document).ready(() => {
   const quatrenary = colors[3];
   const quintinary = colors[4];
 
-
-//////////////////////*********************************** */
-//////////////////////*********************************** */
+  //////////////////////*********************************** */
+  //////////////////////*********************************** */
 
   const sidebarColor = transColors[1];
   const sidebarTrans = 0.9;
   const sidebarFontColor = colors[0];
-  const portfolioBackgroundColor = `linear-gradient(30deg,${colors[3]}, ${colors[1]},${colors[2]}`;
+  const portfolioBackgroundColor = `radial-gradient(${colors[4]}, ${
+    colors[3]
+  },${colors[2]}`;
   const portContentHeadColor = colors[0];
-//////////////////////*********************************** */
-
+  //////////////////////*********************************** */
 
   console.log(colors);
 
@@ -74,19 +77,16 @@ $(document).ready(() => {
         }
       : null;
   }
-  css(".header", `background:${primary};color:${secondary}`);
+  toColor(".header", "background", primary);
+  toColor(".header", "color", secondary);
+
+
   $(".imageDiv1").css("background", portfolioBackgroundColor);
   toColor("a", "color", tertiary);
   toColor("a.navLink", "color", secondary);
   $(".tnIcons").css("border", `2px solid ${colors[0]}`);
   $(".tnIcons").css("border-radius", `20px`);
 
-  //   toColor(
-  //     "a:hover",
-  //     "text-shadow",
-  //     `-1px 1px 1px ${colors[2]}, 1px -1px 1px ${colors[2]},
-  //   1px 1px 1px ${colors[2]}, -1px -1px 1px ${colors[2]}`
-  //   );
 
   $("head")
     .append(`<style>a:hover{ text-shadow: -1px 1px 1px ${tertiary}, 1px -1px 1px ${tertiary},
@@ -100,22 +100,13 @@ $(document).ready(() => {
       sidebarColor.b
     },${sidebarTrans})`
   );
-  //   toColor(
-  //     ".portSidebar::after",
-  //     "background",
-  //     `linear-gradient(45deg,${colors[2]}, ${colors[3]},${colors[1]}, ${
-  //       colors[4]
-  //     })`
-  //   );
+
   $("head").append(
     `<style>.portSidebar:after{background: linear-gradient(45deg,${
       colors[2]
     }, ${colors[3]},${colors[1]}, ${colors[4]}); }</style>`
   );
-  //   toColor(".imageDiv::after", "background", colors[1]);
-  //   $("head").append(
-  //     `<style>.imageDiv::after{ background:${colors[1]}; }</style>`
-  //   );
+
   $("head").append(`<style>.imageDiv:after{ background: ${colors[1]}}</style>`);
 
   toColor(".projectName", "color", sidebarFontColor);
@@ -128,16 +119,7 @@ $(document).ready(() => {
     },.5);border:1px solid ${colors[2]}`
   );
 
-  //   toColor(
-  //     ".sbButton:hover",
-  //     "background",
-  //     `rgba(${transColors[1].r},${transColors[1].g},${transColors[1].b},.5)`
-  //   );
-  //   $("head").append(
-  //     `<style>.sbButton:hover{ background:rgba(${transColors[1].r},${
-  //       transColors[1].g
-  //     },${transColors[1].b},.5);}</style>`
-  //   );
+
   $("head").append(
     `<style>.sbButton:hover{background: rgba(${transColors[1].r}, ${
       transColors[1].g
@@ -145,7 +127,7 @@ $(document).ready(() => {
   );
 
   toColor(".description", "color", colors[2]);
-  css(".description.portfolio", "color:"+sidebarFontColor);
+  css(".description.portfolio", "color:" + sidebarFontColor);
 
   toColor(".portContentHead", "color", portContentHeadColor);
   toColor(".portContentBody", "color", colors[2]);
@@ -174,26 +156,13 @@ $(document).ready(() => {
 
   toColor(".description.about", "color", colors[0]);
   toColor(".page2topRow", "background", colors[0]);
-  //   toColor(
-  //     ".header::after",
-  //     "background",
-  //     `linear-gradient(45deg,${colors[2]}, ${colors[3]},${colors[1]}, ${
-  //       colors[4]
-  //     });`
-  //   );
+
   $("head").append(
     `<style>.header::after{ background:linear-gradient(45deg,${colors[2]}, ${
       colors[3]
     },${colors[1]}, ${colors[4]});}</style>`
   );
 
-  //   toColor(
-  //     ".page2topRow::before",
-  //     "background",
-  //     `linear-gradient(45deg,${colors[2]}, ${colors[3]},${colors[1]}, ${
-  //       colors[4]
-  //     })`
-  //   );
 
   $("head").append(
     `<style>.page2topRow::before{ background:linear-gradient(45deg,${
@@ -201,129 +170,31 @@ $(document).ready(() => {
     }, ${colors[3]},${colors[1]}, ${colors[4]});}</style>`
   );
 
-  //   toColor(
-  //     ".page2topRow::after",
-  //     "background",
-  //     `linear-gradient(45deg,${colors[2]}, ${colors[3]},${colors[1]}, ${
-  //       colors[4]
-  //     })`
-  //   );
+
   $("head").append(
     `<style>.page2topRow::after{ background:linear-gradient(45deg,${
       colors[2]
     }, ${colors[3]},${colors[1]}, ${colors[4]});}</style>`
   );
   toColor(".aboutFooter", "background", colors[0]);
-  //   toColor(
-  //     ".aboutFooter::before",
-  //     "background",
-  //     `linear-gradient(45deg,${colors[2]}, ${colors[3]},${colors[1]}, ${
-  //       colors[4]
-  //     })`
-  //   );
+
   $("head").append(
     `<style>.aboutFooter::before{ background:linear-gradient(45deg,${
       colors[2]
     }, ${colors[3]}, ${colors[4]});}</style>`
   );
   toColor(".aboutFooterContact", "background", colors[0]);
-  //   toColor(
-  //     ".aboutFooterContact::before",
-  //     "background",
-  //     `linear-gradient(45deg,${colors[2]}, ${colors[3]},${colors[1]}, ${
-  //       colors[4]
-  //     })`
-  //   );
+
   $("head").append(
     `<style>.aboutFooterContact::before{ background:linear-gradient(45deg,${
       colors[2]
     }, ${colors[3]},${colors[1]}, ${colors[4]});}</style>`
   );
   toColor(".form-inp", "border", `1px solid ${colors[0]}`);
-  $(".sbButton").on("click", event => {
-    if ($(".portSidebar").attr("value") == "true") {
-      $(".portSidebar").attr("value", "false");
-      $(".portSidebar").attr(
-        `style`,
-        `padding: ${document.getElementById("pSB").offsetWidth -
-          document.getElementById("pSB").clientWidth};` +
-          `animation:sidebarSwipeLeft 0.3s;animation-fill-mode: forwards;background:
-          rgba(${sidebarColor.r},${sidebarColor.g},${
-            sidebarColor.b
-          },${sidebarTrans})`
-      );
 
-      // $(".portSidebar").attr(
-      //   "style",
-      //   "animation:sidebarSwipeLeft .3s;animation-fill-mode: forwards;"+`background:rgba(${transColors[0].r},${transColors[0].g},${transColors[0].b},.9)`
-      // );
-
-      $(".portContent").attr(
-        "style",
-        "animation:portSwipeLeft 0.3s;animation-fill-mode:forwards;"
-      );
-      $(".header").attr(
-        "style",
-        "animation:headSwipeLeft 0.3s;animation-fill-mode:forwards;background:" +
-          colors[0] +
-          ";color:" +
-          colors[1] +
-          ";"
-      );
-
-      $(".sbButton").html(">>");
-      $(".sbButton").attr(
-        "style",
-        `left: 20px;background:
-      rgba(${transColors[0].r},${transColors[0].g},${
-          transColors[0].b
-        },.5);border:1px solid ${colors[2]}`
-      );
-
-      // $(".header").addClass("fullscreen");
-    } else {
-      $(".portSidebar").attr("value", "true");
-      $(".portSidebar").attr(
-        `style`,
-        `animation:sidebarSwipeRight 0.3s;animation-fill-mode: forwards;padding: ${document.getElementById("pSB").offsetWidth -
-          document.getElementById("pSB").clientWidth}` +
-          `;background:
-          rgba(${sidebarColor.r},${sidebarColor.g},${
-            sidebarColor.b
-          },${sidebarTrans})`
-      );
-
-      // $(".portSidebar").attr(
-      //   "style",
-      //   "animation:sidebarSwipeRight .3s;animation-fill-mode: forwards;"+`background:rgba(${transColors[0].r},${transColors[0].g},${transColors[0].b},.9)`
-      // );
-
-      $(".portContent").attr(
-        "style",
-        "animation:portSwipeRight 0.3s;animation-fill-mode:forwards;"
-      );
-      $(".header").attr(
-        "style",
-        "animation:headSwipeRight 0.3s;animation-fill-mode:forwards;background:" +
-          colors[0] +
-          ";color:" +
-          colors[1] +
-          ";"
-      );
-
-      $(".sbButton").html("<<");
-      $(".sbButton").attr(
-        "style",
-        `left: 27vw;background:
-      rgba(${transColors[0].r},${transColors[0].g},${
-          transColors[0].b
-        },.5);border:1px solid ${colors[2]}`
-      );
-    }
-  });
 
   function toColor(element, attribute, color) {
-    $(`${element}`).attr("style", `${attribute}:${color}`);
+    $(`${element}`).css(`${attribute}`,`${color}`);
   }
   function css(element, style) {
     $(`${element}`).attr("style", style);

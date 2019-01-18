@@ -26,14 +26,25 @@ const sideBars = {
     
     const howmuchScroll = 0;
     let timeOut;
+
+    //////////////////////////////////////////////////////////////**************** */
     let vpHeight = $(this).outerHeight();
     // console.log(vpHeight);
+    let vpWidth = $(this).outerWidth();
+    $(".header").css("min-width", vpWidth*0.75);
+    $(".portContent").css("min-width", vpWidth*0.75*.75);
+    $(".portSidebar").css("min-width", vpWidth*0.25*.75);
+    //box-shadow: calc(25vw + 2px) 1px 4px black;
+    console.log("YEAH"+ $(".header").outerWidth()*.75)
+    // $(".header").css("box-shadow", `${$(".header").outerWidth()*.75}px 1px 4px black`);
+
+    // $(".header").css("min-width", vpWidth*0.75);
 
     let iconHeight = 0.15*vpHeight;
     let iconWidth = 1.7*iconHeight;
     // console.log("HEIGHT "+`${iconHeight}px`);
     // console.log("WIDTH "+`${iconWidth}px`);
-
+//////////////////////////////////////////////////////////////************** */
     $(".tnIcons").attr("height", `${iconHeight}px`);
     $(".tnIcons").attr("width", `${iconWidth}px`);
 
@@ -78,6 +89,61 @@ const sideBars = {
         $(".description").html(sideBars.descriptions[whichProj]);
       }, 10);
     });
+
+
+    $(".sbButton").on("click", event => {
+      if ($(".portSidebar").attr("value") == "true") {
+        $(".portSidebar").attr("value", "false");
+  
+      
+        $(".portSidebar").css(`min-width`, `0`);
+        $(".portSidebar").css(
+          `animation`,
+          `sidebarSwipeLeft 0.3s ease forwards`
+        );
+  
+        $(".portContent").css(
+          "animation",
+          "portSwipeLeft 0.3s ease forwards"
+        );
+        $(".header").css(`min-width`, `0`);
+        $(".header").css(
+          "animation",
+          "headSwipeLeft 0.3s ease forwards"
+        );
+  
+        $(".sbButton").html(">>");
+        $(".sbButton").css("left", `20px`);
+  
+        // $(".header").addClass("fullscreen");
+      } else {
+        $(".portSidebar").attr("value", "true");
+  
+        $(".portSidebar").css("min-width", vpWidth*0.25*.75);
+        $(".header").css("min-width", vpWidth*0.75);
+  
+  ///////////////////////////////////////////////////////////////////////////////////
+        $(".portSidebar").css(
+          `animation`,
+          `sidebarSwipeRight 0.3s ease forwards`
+        );
+  
+        $(".portContent").css(
+          "animation",
+          "portSwipeRight 0.3s ease forwards"
+        );
+  
+        $(".header").css(
+          "animation",
+          "headSwipeRight 0.3s ease forwards"
+        );
+  ///////////////////////////////////////////////////////////////////////////////////
+  
+        $(".sbButton").html("<<");
+        $(".sbButton").css("left", `27vw`);
+      }
+    });
+
     function showAnimation(anim, duration, whichClass) {
       $(`.${whichClass}`).attr(
         `style`,

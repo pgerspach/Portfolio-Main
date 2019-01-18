@@ -21,40 +21,51 @@ let isMobile = false;
 //   ]
 // };
 $(document).ready(() => {
-  $(window).resize(function() {
-    if ($(window).width() < 594 && !isMobile) {
-      isMobile = true;
-      // $(".portSidebar").attr("style", "display:none");
-      $(".portSidebar").css("display", "none");
+  // $(window).resize(function() {
+  //   if ($(window).width() < 594 && !isMobile) {
+  //     isMobile = true;
+  //     // $(".portSidebar").attr("style", "display:none");
+  //     $(".portSidebar").css("display", "none");
 
-      // $(".portContent").attr("style", "width:100%");
-      $(".portContent").css("width", "100vw");
+  //     // $(".portContent").attr("style", "width:100%");
+  //     $(".portContent").css("width", "100vw");
 
-      // $(".imageDiv::after").attr("style", "display:none");
-      $(".imageDiv::after").css("display", "none");
+  //     // $(".imageDiv::after").attr("style", "display:none");
+  //     $(".imageDiv::after").css("display", "none");
 
-      // $(".inputRow").attr("style", "flex-direction: column");
-      $(".inputRow").css("flex-direction", "column");
+  //     // $(".inputRow").attr("style", "flex-direction: column");
+  //     $(".inputRow").css("flex-direction", "column");
 
-    } else if ($(window).width() > 594 && isMobile) {
-      isMobile = false;
-      // $(".portSidebar").attr("style", "display:flex");
-      $(".portSidebar").css("display", "flex");
+  //   } else if ($(window).width() > 594 && isMobile) {
+  //     isMobile = false;
+  //     // $(".portSidebar").attr("style", "display:flex");
+  //     $(".portSidebar").css("display", "flex");
 
-      // $(".portContent").attr("style", "width:75vw");
-      $(".portContent").css("width", "75vw");
+  //     // $(".portContent").attr("style", "width:75vw");
+  //     $(".portContent").css("width", "75vw");
 
-      // $(".inputRow").attr("style", "flex-direction: row");
-      $(".inputRow").css("flex-direction", "row");
+  //     // $(".inputRow").attr("style", "flex-direction: row");
+  //     $(".inputRow").css("flex-direction", "row");
 
-    }
-  });
+  //   }
+  // });
 
   if ($(window).width() < 594) {
     isMobile = true;
     // $(".portSidebar").attr("style", "display:none");
     $(".portSidebar").css("display", "none");
     $(".portContent").css("width", "100vw");
+    let vpWidth = $(this).outerWidth();
+    // console.log(vpHeight);
+    let iconWidth = 0.3*vpWidth;
+
+    let iconHeight = 0.5625*iconWidth;
+    // console.log("HEIGHT "+`${iconHeight}px`);
+    // console.log("WIDTH "+`${iconWidth}px`);
+
+    $(".tnIcons").attr("height", `${iconHeight}px`);
+    $(".tnIcons").attr("width", `${iconWidth}px`);
+    
 
   }
 });
