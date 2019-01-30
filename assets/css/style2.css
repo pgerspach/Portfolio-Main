@@ -388,49 +388,55 @@ a:hover {
 
   z-index: 3;
 }
-
 .imageDiv2 {
+  z-index: 3;
+  background-image: url("../images/quote.png");
+  background-position-x: center;
+  background-position-y: top;
+  background-size: cover;
+}
+.imageDiv3 {
   z-index: 3;
   background-image: url("../images/project1image2.jpg");
   background-position-x: center;
   background-position-y: top;
   background-size: cover;
 }
-.imageDiv3 {
+.imageDiv4 {
   background-image: url("../images/project2image2.jpg");
   background-position-x: center;
   background-position-y: top;
   background-size: cover;
   z-index: 3;
 }
-.imageDiv4 {
+.imageDiv5 {
   background-image: url("../images/project3image2.jpg");
   background-size: cover;
   background-position-x: center;
   background-position-y: top;
   z-index: 3;
 }
-.imageDiv5 {
+.imageDiv6 {
   background-image: url("../images/project4image2.jpg");
   background-size: cover;
   background-position-y: top;
   z-index: 3;
 }
-.imageDiv6 {
+.imageDiv7 {
   background-image: url("../images/project5image2.jpg");
   background-size: cover;
   background-position-x: center;
   background-position-y: top;
   z-index: 3;
 }
-.imageDiv7 {
+.imageDiv8 {
   background-image: url("../images/liri.gif");
   background-size: cover;
   background-position-x: center;
   background-position-y: top;
   z-index: 3;
 }
-.imageDiv8 {
+.imageDiv9 {
   background-image: url("../images/cliwordguess.gif");
   background-size: cover;
   background-position-x: center;
